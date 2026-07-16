@@ -148,7 +148,7 @@ export default function Home() {
         {/* 카카오톡 버튼 */}
         <div style={{ marginTop: '15px' }}>
           <a 
-            href="https://open.kakao.com/..." 
+            href="https://open.kakao.com/o/gGrNacni" 
             target="_blank" 
             rel="noopener noreferrer"
             style={{ 
