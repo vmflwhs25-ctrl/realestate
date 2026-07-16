@@ -4,7 +4,7 @@ export default function Home() {
     <div style={{ 
       margin: 0,
       padding: 0,
-      fontFamily: 'sans-serif', 
+      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif', 
       minHeight: '100vh',
       display: 'flex',
       flexDirection: 'column',
@@ -13,11 +13,10 @@ export default function Home() {
       color: 'white',
       position: 'relative',
       overflow: 'hidden',
-      paddingTop: '60px',
-      paddingBottom: '60px'
+      padding: '40px 20px'
     }}>
       
-      {/* 1단계에서 넣은 background.mp4 비디오가 배경으로 실행됩니다 */}
+      {/* 🎥 배경 동영상 */}
       <video
         autoPlay
         loop
@@ -36,81 +35,72 @@ export default function Home() {
         <source src="/background.mp4" type="video/mp4" />
       </video>
 
-      {/* 영상 뒤에 글씨가 묻히지 않도록 어둡게 눌러주는 반투명 필터 */}
+      {/* 🖤 배경 필터 (어둡기를 0.82 -> 0.55로 낮춰 동영상이 훨씬 잘 보이게 개선!) */}
       <div style={{
         position: 'absolute',
         top: 0,
         left: 0,
         width: '100%',
         height: '100%',
-        backgroundColor: 'rgba(10, 15, 30, 0.82)', 
+        backgroundColor: 'rgba(5, 8, 16, 0.55)', 
         zIndex: -1,
       }} />
       
-      {/* 중앙 메인 안내 상자 */}
+      {/* 💎 배경이 은은하게 비치는 고급스러운 크리스탈 유리 스타일 카드 */}
       <main style={{ 
-        maxWidth: '620px', 
-        width: '90%', 
+        maxWidth: '540px', 
+        width: '100%', 
         textAlign: 'center', 
-        backgroundColor: 'rgba(15, 23, 42, 0.65)', 
-        padding: '50px 35px', 
-        borderRadius: '24px', 
-        boxShadow: '0 20px 50px rgba(0,0,0,0.5)',
-        backdropFilter: 'blur(12px)', 
-        border: '1px solid rgba(255, 255, 255, 0.08)',
-        zIndex: 1
+        backgroundColor: 'rgba(15, 23, 42, 0.45)', // 투명도를 높여 배경이 비치게 설정
+        padding: '45px 25px', 
+        borderRadius: '20px', 
+        boxShadow: '0 30px 60px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1)', // 안쪽 테두리 광원 효과 추가
+        backdropFilter: 'blur(16px)', // 유리 뒤쪽 배경 흐림 효과 강화
+        WebkitBackdropFilter: 'blur(16px)', // 아이폰(Safari) 호환성 지원
+        border: '1px solid rgba(255, 255, 255, 0.1)',
+        zIndex: 1,
+        boxSizing: 'border-box'
       }}>
         
         {/* 상단 서브 타이틀 */}
-        <p style={{ color: '#94A3B8', fontWeight: '600', fontSize: '13px', letterSpacing: '3px', margin: '0 0 15px 0' }}>
-          ESTABLISHED DATA ANALYSIS
+        <p style={{ color: '#60A5FA', fontWeight: '700', fontSize: '12px', letterSpacing: '4px', margin: '0 0 12px 0' }}>
+          REAL ESTATE 10%
         </p>
         
         {/* 메인 타이틀 */}
-        <h1 style={{ fontSize: '34px', fontWeight: '800', margin: '0 0 25px 0', lineHeight: '1.4', letterSpacing: '-1px' }}>
+        <h1 style={{ fontSize: '30px', fontWeight: '800', margin: '0 0 20px 0', lineHeight: '1.4', letterSpacing: '-1px' }}>
           객관적 지표와 통계 기반<br />
           <span style={{ color: '#3B82F6' }}>부동산 10%</span>
         </h1>
         
-        {/* 설명 멘트 (신뢰감을 주는 전문적인 톤) */}
-        <p style={{ color: '#D1D5DB', fontSize: '15px', lineHeight: '1.75', margin: '0 0 35px 0', textAlign: 'justify', textJustify: 'inter-word' }}>
-          부동산 시장의 불확실성이 커질수록 감정에 의존한 판단은 리스크를 키웁니다. 
-          저희 <strong>'부동산 10%'</strong>는 거시경제 동향, 실거래 통계 추이, 그리고 공식 정부 고시 자료만을 바탕으로 시장을 냉정하게 분석합니다. 
-          상호 신뢰를 바탕으로 한 정보 교류와 시장 전망을 공유하기 위해 카카오톡 오픈채팅방을 개설하여 운영하고 있습니다.
+        {/* 본문 멘트 */}
+        <p style={{ color: '#F1F5F9', fontSize: '14px', lineHeight: '1.8', margin: '0 0 30px 0', wordBreak: 'keep-all' }}>
+          시장 불확실성이 커질수록 감정에 의존한 판단은 리스크를 키웁니다.<br />
+          저희 <strong>'부동산 10%'</strong>는 공식 정부 고시 자료와 실거래 데이터를 기반으로 시장을 냉정하게 분석하며, 상호 신뢰 기반의 교류를 위해 오픈채팅방을 공유하고 있습니다.
         </p>
 
-        {/* 정보방 주요 공유 영역 */}
+        {/* 심플하고 단정한 정보 세션 (모바일 가독성 업그레이드) */}
         <div style={{ 
           textAlign: 'left', 
-          backgroundColor: 'rgba(255, 255, 255, 0.03)', 
-          padding: '25px', 
-          borderRadius: '16px', 
-          margin: '0 auto 35px auto',
+          backgroundColor: 'rgba(255, 255, 255, 0.02)', 
+          padding: '20px 22px', 
+          borderRadius: '12px', 
+          margin: '0 auto 30px auto',
           border: '1px solid rgba(255, 255, 255, 0.05)'
         }}>
-          <h3 style={{ fontSize: '16px', color: '#F8FAFC', margin: '0 0 15px 0', fontWeight: 'bold', textAlign: 'center' }}>
-            [ 주요 분석 및 공유 세션 ]
-          </h3>
-          <p style={{ margin: '0 0 12px 0', fontSize: '14px', color: '#94A3B8', lineHeight: '1.6' }}>
-            ▪️ <strong style={{ color: '#E2E8F0' }}>주간 시장 브리핑:</strong> KB시세 및 한국부동산원 데이터 기반 지역 동향 분석
+          <p style={{ margin: '0 0 10px 0', fontSize: '13px', color: '#CBD5E1', lineHeight: '1.5' }}>
+            ▪️ <strong>주간 브리핑:</strong> 시세 자료 기반 지역 동향 분석
           </p>
-          <p style={{ margin: '0 0 12px 0', fontSize: '14px', color: '#94A3B8', lineHeight: '1.6' }}>
-            ▪️ <strong style={{ color: '#E2E8F0' }}>고시 정보 요약:</strong> 국토부 및 지자체 개발 계획, 교통망 확정안 팩트 체크
+          <p style={{ margin: '0 0 10px 0', fontSize: '13px', color: '#CBD5E1', lineHeight: '1.5' }}>
+            ▪️ <strong>고시 요약:</strong> 국토부 및 지자체 개발 계획 팩트 체크
           </p>
-          <p style={{ margin: 0, fontSize: '14px', color: '#94A3B8', lineHeight: '1.6' }}>
-            ▪️ <strong style={{ color: '#E2E8F0' }}>사례 분석 세미나:</strong> 회원 간 실전 거래 성공 및 실패 사례 피드백 공유
+          <p style={{ margin: 0, fontSize: '13px', color: '#CBD5E1', lineHeight: '1.5' }}>
+            ▪️ <strong>세미나:</strong> 회원 간 실전 거래 사례 피드백 교류
           </p>
         </div>
 
-        {/* 냉정한 자가진단 문구 */}
-        <p style={{ color: '#94A3B8', fontSize: '13px', margin: '0 0 30px 0', lineHeight: '1.6' }}>
-          근거 없는 소문이나 조급함에 쫓겨 의사결정을 내리고 계시지는 않습니까?<br />
-          냉정한 데이터 검증을 통해 투자의 리스크를 최소화하시기 바랍니다.
-        </p>
-
-        {/* 카카오톡 바로 입장 버튼 (비밀번호 받기 문구 삭제) */}
-        <div style={{ marginTop: '20px' }}>
-          {/* 🔗 나중에 실제 오픈채팅 링크 주소가 생기면 "https://open.kakao.com/..." 부분을 본인 링크로 바꿔주세요! */}
+        {/* 카카오톡 버튼 (조금 더 세련되게 모서리 둥글기 조절) */}
+        <div style={{ marginTop: '10px' }}>
           <a 
             href="https://open.kakao.com/..." 
             target="_blank" 
@@ -119,13 +109,13 @@ export default function Home() {
               display: 'block', 
               backgroundColor: '#FEE500', 
               color: '#1A1A1C', 
-              padding: '16px 0', 
-              borderRadius: '12px', 
-              fontSize: '17px', 
+              padding: '15px 0', 
+              borderRadius: '8px', 
+              fontSize: '16px', 
               fontWeight: 'bold', 
               textDecoration: 'none', 
-              boxShadow: '0 4px 15px rgba(0, 0, 0, 0.2)', 
-              transition: 'all 0.3s ease',
+              boxShadow: '0 10px 25px rgba(254, 229, 0, 0.2)', 
+              transition: 'transform 0.2s ease',
               width: '100%'
             }}
           >
@@ -135,10 +125,9 @@ export default function Home() {
 
       </main>
 
-      {/* 하단 푸터 */}
-      <footer style={{ marginTop: '40px', color: 'rgba(255, 255, 255, 0.3)', fontSize: '11px', textAlign: 'center', lineHeight: '1.6' }}>
-        © 2026 부동산 10%. All rights reserved.<br />
-        본 채널에서 제공하는 정보는 참고용이며, 최종 투자 의사 결정과 책임은 투자자 본인에게 있습니다.
+      {/* 푸터 */}
+      <footer style={{ marginTop: '30px', color: 'rgba(255, 255, 255, 0.25)', fontSize: '11px', textAlign: 'center', lineHeight: '1.6', zIndex: 1 }}>
+        © 2026 부동산 10%. All rights reserved.
       </footer>
     </div>
   );
