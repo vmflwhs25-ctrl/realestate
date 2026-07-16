@@ -16,7 +16,6 @@ export default function Home() {
       padding: '40px 20px'
     }}>
       
-      {/* 🎥 배경 동영상 재생 영역 */}
       <video
         autoPlay
         loop
@@ -35,7 +34,6 @@ export default function Home() {
         <source src="/background.mp4" type="video/mp4" />
       </video>
 
-      {/* 🖤 야경 영상이 어둡지 않고 생생하게 보이도록 투명도 최적화 (0.82 -> 0.45로 대폭 낮춤) */}
       <div style={{
         position: 'absolute',
         top: 0,
@@ -46,40 +44,35 @@ export default function Home() {
         zIndex: -1,
       }} />
       
-      {/* 💎 뒷배경이 훤히 유리에 비치도록 만든 초밀착 투명 카드 디자인 */}
       <main style={{ 
         maxWidth: '500px', 
         width: '100%', 
         textAlign: 'center', 
-        backgroundColor: 'rgba(15, 23, 42, 0.35)', // 뒤가 완전히 비치게 35%만 어둡게 설정
+        backgroundColor: 'rgba(15, 23, 42, 0.35)', 
         padding: '40px 25px', 
         borderRadius: '24px', 
         boxShadow: '0 25px 50px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.15)', 
-        backdropFilter: 'blur(20px)', // 유리 뿌연 효과 극대화
+        backdropFilter: 'blur(20px)', 
         WebkitBackdropFilter: 'blur(20px)', 
-        border: '1px solid rgba(255, 255, 255, 0.15)', // 테두리를 화이트 유리처럼 은은하게 반짝이게 설정
+        border: '1px solid rgba(255, 255, 255, 0.15)', 
         zIndex: 1,
         boxSizing: 'border-box'
       }}>
         
-        {/* 상단 포인트 태그 */}
         <p style={{ color: '#60A5FA', fontWeight: '800', fontSize: '11px', letterSpacing: '4px', margin: '0 0 12px 0' }}>
           REAL ESTATE 10%
         </p>
         
-        {/* 메인 타이틀 */}
         <h1 style={{ fontSize: '30px', fontWeight: '800', margin: '0 0 20px 0', lineHeight: '1.4', letterSpacing: '-1px' }}>
           객관적 지표와 통계 기반<br />
           <span style={{ color: '#3B82F6' }}>부동산 10%</span>
         </h1>
         
-        {/* 설명 텍스트 */}
         <p style={{ color: '#F1F5F9', fontSize: '14px', lineHeight: '1.8', margin: '0 0 30px 0', wordBreak: 'keep-all' }}>
           시장 불확실성이 커질수록 감정에 의존한 판단은 리스크를 키웁니다.<br />
-          저희 <strong>'부동산 10%'</strong>는 공식 정부 고시 자료와 실거래 데이터를 기반으로 시장을 냉정하게 분석하며, 상호 신뢰 기반의 교류를 위해 오픈채팅방을 공유하고 있습니다.
+          저희 <strong>&apos;부동산 10%&apos;</strong>는 공식 정부 고시 자료와 실거래 데이터를 기반으로 시장을 냉정하게 분석하며, 상호 신뢰 기반의 교류를 위해 오픈채팅방을 공유하고 있습니다.
         </p>
 
-        {/* 투명 카드 디자인에 어울리게 얇은 실선으로만 구분한 세션 정보 */}
         <div style={{ 
           textAlign: 'left', 
           backgroundColor: 'rgba(255, 255, 255, 0.01)', 
@@ -99,7 +92,6 @@ export default function Home() {
           </p>
         </div>
 
-        {/* 카카오톡 버튼 */}
         <div style={{ marginTop: '10px' }}>
           <a 
             href="https://open.kakao.com/..." 
@@ -124,7 +116,6 @@ export default function Home() {
 
       </main>
 
-      {/* 푸터 */}
       <footer style={{ marginTop: '30px', color: 'rgba(255, 255, 255, 0.25)', fontSize: '11px', textAlign: 'center', lineHeight: '1.6', zIndex: 1 }}>
         © 2026 부동산 10%. All rights reserved.
       </footer>
