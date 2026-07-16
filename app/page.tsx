@@ -1,90 +1,72 @@
+// app/page.tsx
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black text-white">
-      {/* Hero */}
-      <section className="flex min-h-screen flex-col items-center justify-center px-6 text-center">
-        <p className="text-yellow-400 text-lg tracking-[8px] uppercase">
-           부동산 10%
-        </p>
-
-        <h1 className="mt-6 text-5xl md:text-7xl font-extrabold leading-tight">
-          상위 10%는
-          <br />
-          이미 움직이고 있습니다.
+    <div style={{ fontFamily: 'sans-serif', backgroundColor: '#F9FAFB', minHeight: '100vh' }}>
+      
+      {/* 1. 어두운 헤더 섹션 */}
+      <header style={{ backgroundColor: '#121827', color: 'white', padding: '60px 20px', textAlign: 'center' }}>
+        <p style={{ color: '#4ADE80', fontWeight: 'bold', marginBottom: '10px' }}>[우리 부동산]</p>
+        <h1 style={{ fontSize: '36px', fontWeight: 'bold', margin: '10px 0 20px 0', lineHeight: '1.3' }}>
+          감이 아닌,<br />데이터 기반 부동산 현실
         </h1>
-
-        <p className="mt-8 max-w-2xl text-lg text-gray-400">
-          뉴스보다 빠른 시장 분석과 개발호재를
-          오픈채팅에서 무료로 확인해보세요.
+        <p style={{ color: '#9CA3AF', maxWidth: '600px', margin: '0 auto 30px auto' }}>
+          차트를 읽고 시장의 흐름을 이해하는 사람들, 그게 바로 저희입니다.
         </p>
+        <button style={{ backgroundColor: '#1D4ED8', color: 'white', border: 'none', padding: '12px 30px', borderRadius: '30px', fontWeight: 'bold', cursor: 'pointer' }}>
+          내 맞춤 아파트 찾기
+        </button>
+      </header>
 
-        <a
-          href="https://open.kakao.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-10 rounded-full bg-yellow-400 px-8 py-4 text-lg font-bold text-black transition hover:scale-105"
-        >
-          카카오 오픈채팅 참여하기 →
-        </a>
+      {/* 2. 아파트 그림과 설명 섹션 */}
+      <section style={{ maxWidth: '1000px', margin: '50px auto', padding: '0 20px', display: 'flex', flexWrap: 'wrap', gap: '30px', justifyContent: 'center' }}>
+        
+        {/* 아파트 그림 (인터넷에 있는 멋진 아파트 사진을 바로 가져왔어요!) */}
+        <div style={{ flex: '1', minWidth: '300px', borderRadius: '20px', overflow: 'hidden', boxShadow: '0 10px 25px rgba(0,0,0,0.1)' }}>
+          <img 
+            src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&auto=format&fit=crop&q=60" 
+            alt="아파트 그림" 
+            style={{ width: '100%', height: '350px', objectFit: 'cover' }}
+          />
+        </div>
+
+        {/* 아파트 설명 (파란색 카드 스타일) */}
+        <div style={{ flex: '1', minWidth: '300px', backgroundColor: '#1E293B', color: 'white', padding: '30px', borderRadius: '20px', boxShadow: '0 10px 25px rgba(0,0,0,0.1)' }}>
+          <span style={{ color: '#3B82F6', fontWeight: 'bold' }}># 추천 매물</span>
+          <h2 style={{ fontSize: '24px', margin: '10px 0 20px 0' }}>데이터로 분석한 추천 단지</h2>
+          <p style={{ color: '#9CA3AF', lineHeight: '1.6', marginBottom: '15px' }}>
+            🏢 <strong>학군 및 교통 최적화:</strong> 지하철역 도보 5분 거리, 초품아 단지입니다.
+          </p>
+          <p style={{ color: '#9CA3AF', lineHeight: '1.6', marginBottom: '15px' }}>
+            📈 <strong>실거래가 안정성:</strong> 최근 3년간 꾸준히 우상향한 안전 자산입니다.
+          </p>
+          <p style={{ color: '#9CA3AF', lineHeight: '1.6' }}>
+            💰 <strong>합리적인 갭투자:</strong> 전세가율이 높아 적은 자본으로 선점이 가능합니다.
+          </p>
+        </div>
+
       </section>
 
-      {/* 소개 */}
-      <section className="bg-neutral-950 py-24">
-        <div className="mx-auto max-w-6xl px-6">
-          <h2 className="mb-12 text-center text-4xl font-bold">
-            왜 많은 분들이 참여할까요?
-          </h2>
-
-          <div className="grid gap-8 md:grid-cols-3">
-            <div className="rounded-3xl bg-neutral-900 p-8">
-              <h3 className="text-2xl font-bold text-yellow-400">
-                개발호재
-              </h3>
-              <p className="mt-4 text-gray-400">
-                교통, 재개발, 신도시 등 핵심 이슈를 쉽게 정리합니다.
-              </p>
-            </div>
-
-            <div className="rounded-3xl bg-neutral-900 p-8">
-              <h3 className="text-2xl font-bold text-yellow-400">
-                입지분석
-              </h3>
-              <p className="mt-4 text-gray-400">
-                부산 주요 지역의 장점과 미래가치를 분석합니다.
-              </p>
-            </div>
-
-            <div className="rounded-3xl bg-neutral-900 p-8">
-              <h3 className="text-2xl font-bold text-yellow-400">
-                시장흐름
-              </h3>
-              <p className="mt-4 text-gray-400">
-                최신 시장 분위기와 투자 인사이트를 공유합니다.
-              </p>
-            </div>
-          </div>
+      {/* 3. 도움을 받을 전문가가 없으신가요? */}
+      <section style={{ maxWidth: '600px', margin: '50px auto 100px auto', padding: '0 20px', textAlign: 'center' }}>
+        <h2 style={{ fontSize: '28px', color: '#111827', marginBottom: '30px', lineHeight: '1.4' }}>
+          도움을 받을<br />
+          <span style={{ color: '#1D4ED8' }}>전문가</span>가 없으신가요?
+        </h2>
+        
+        <div style={{ backgroundColor: 'white', padding: '40px 20px', borderRadius: '20px', border: '1px solid #E5E7EB', boxShadow: '0 4px 6px rgba(0,0,0,0.05)' }}>
+          <p style={{ fontSize: '20px', fontWeight: 'bold', color: '#1F2937', marginBottom: '15px' }}>
+            도대체 무엇이 맞는 투자일까?
+          </p>
+          <div style={{ fontSize: '60px', margin: '20px 0' }}>🏢🤔</div>
+          <p style={{ color: '#4B5563', lineHeight: '1.6' }}>
+            "이번엔 정말 올 것 같아"<br />
+            "남들 들어가니까 나도?"<br />
+            "내 느낌이 맞을 거야"<br /><br />
+            명확한 기준 없이 반복되는 매매, 결국 불안과 손실로 이어지지 않으셨나요?
+          </p>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-24 text-center">
-        <h2 className="text-5xl font-bold">
-          지금 바로 무료 오픈채팅에 참여하세요
-        </h2>
-
-        <p className="mt-6 text-xl text-gray-400">
-          먼저 정보를 아는 사람이 먼저 움직입니다.
-        </p>
-
-        <a
-          href="https://open.kakao.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-10 inline-block rounded-full bg-yellow-400 px-10 py-5 text-xl font-bold text-black transition hover:scale-105"
-        >
-          무료 참여하기
-        </a>
-      </section>
-    </main>
+    </div>
   );
 }
