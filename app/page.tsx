@@ -1,3 +1,5 @@
+'use client';
+
 // app/page.tsx
 export default function Home() {
   return (
@@ -97,10 +99,10 @@ export default function Home() {
           fontWeight: '300'
         }}>
           투자는 감상이나 소문이 아닌 오직 차갑고 객관적인 숫자로 증명되어야 합니다.<br />
-          저희 <strong>&apos;부동산 10%&apos;</strong>는 국토교통부 공식 발표와 기관 통계 데이터만을 취합하여, 시장의 가려진 진실을 냉정하게 공유하는 오피니언 리더 세션입니다.
+          저희 <strong>'부동산 10%'</strong>는 국토교통부 공식 발표와 기관 통계 데이터만을 취합하여, 시장의 가려진 진실을 냉정하게 공유하는 오피니언 리더 세션입니다.
         </p>
 
-        {/* 📊 공시/통계 팩트 기반 메뉴 세션 (전면 리뉴얼) */}
+        {/* 📊 공시/통계 팩트 기반 메뉴 세션 */}
         <div style={{ 
           textAlign: 'left', 
           backgroundColor: 'rgba(12, 10, 9, 0.35)', 
@@ -144,38 +146,39 @@ export default function Home() {
             </div>
           </div>
         </div>
-{/* 카카오톡 버튼 */}
-<div style={{ marginTop: '15px' }}>
-  <a 
-  href="https://open.kakao.com/o/gGrNacni" 
-  target="_blank" 
-  rel="noopener noreferrer"
-  onClick={() => {
-    if (typeof window !== "undefined" && window.gtag) {
-      window.gtag("event", "openchat_click", {
-        event_category: "button",
-        event_label: "프라이빗 데이터 정보방 입장",
-      });
-    }
-  }}
-  style={{ 
-    display: 'block',
-      backgroundColor: '#FEE500', 
-      color: '#1C1917', 
-      padding: '16px 0', 
-      borderRadius: '16px', 
-      fontSize: '15px', 
-      fontWeight: '700', 
-      textDecoration: 'none', 
-      boxShadow: '0 12px 30px rgba(254, 229, 0, 0.15)', 
-      letterSpacing: '-0.3px',
-      width: '100%'
-    }}
-  >
-    프라이빗 데이터 정보방 입장 💬
-  </a>
-</div>
 
+        {/* 카카오톡 버튼 */}
+        <div style={{ marginTop: '15px' }}>
+          <a 
+            href="https://open.kakao.com/o/gGrNacni" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            onClick={() => {
+              if (typeof window !== "undefined" && (window as any).gtag) {
+                (window as any).gtag("event", "openchat_click", {
+                  event_category: "button",
+                  event_label: "프라이빗 데이터 정보방 입장",
+                });
+                console.log("GA4 전송 완료");
+              }
+            }}
+            style={{ 
+              display: 'block',
+              backgroundColor: '#FEE500', 
+              color: '#1C1917', 
+              padding: '16px 0', 
+              borderRadius: '16px', 
+              fontSize: '15px', 
+              fontWeight: '700', 
+              textDecoration: 'none', 
+              boxShadow: '0 12px 30px rgba(254, 229, 0, 0.15)', 
+              letterSpacing: '-0.3px',
+              width: '100%'
+            }}
+          >
+            프라이빗 데이터 정보방 입장 💬
+          </a>
+        </div>
       </main>
 
       {/* 푸터 */}
