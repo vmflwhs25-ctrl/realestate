@@ -147,27 +147,35 @@ export default function Home() {
 
         {/* 카카오톡 버튼 */}
         <div style={{ marginTop: '15px' }}>
-          <a 
-            href="https://open.kakao.com/o/gGrNacni" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            style={{ 
-              display: 'block', 
-              backgroundColor: '#FEE500', 
-              color: '#1C1917', 
-              padding: '16px 0', 
-              borderRadius: '16px', 
-              fontSize: '15px', 
-              fontWeight: '700', 
-              textDecoration: 'none', 
-              boxShadow: '0 12px 30px rgba(254, 229, 0, 0.15)', 
-              letterSpacing: '-0.3px',
-              width: '100%'
-            }}
-          >
-            프라이빗 데이터 정보방 입장 💬
-          </a>
-        </div>
+  <a 
+    href="https://open.kakao.com/o/gGrNacni" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    onClick={() => {
+      if (typeof window !== "undefined" && window.gtag) {
+        window.gtag("event", "openchat_click", {
+          event_category: "button",
+          event_label: "프라이빗 데이터 정보방 입장",
+        });
+      }
+    }}
+    style={{ 
+      display: 'block', 
+      backgroundColor: '#FEE500', 
+      color: '#1C1917', 
+      padding: '16px 0', 
+      borderRadius: '16px', 
+      fontSize: '15px', 
+      fontWeight: '700', 
+      textDecoration: 'none', 
+      boxShadow: '0 12px 30px rgba(254, 229, 0, 0.15)', 
+      letterSpacing: '-0.3px',
+      width: '100%'
+    }}
+  >
+    프라이빗 데이터 정보방 입장 💬
+  </a>
+</div>
 
       </main>
 
