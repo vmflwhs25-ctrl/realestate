@@ -144,23 +144,22 @@ export default function Home() {
             </div>
           </div>
         </div>
-
-        {/* 카카오톡 버튼 */}
-        <div style={{ marginTop: '15px' }}>
+{/* 카카오톡 버튼 */}
+<div style={{ marginTop: '15px' }}>
   <a 
-    href="https://open.kakao.com/o/gGrNacni" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    onClick={() => {
-      if (typeof window !== "undefined" && window.gtag) {
-        window.gtag("event", "openchat_click", {
-          event_category: "button",
-          event_label: "프라이빗 데이터 정보방 입장",
-        });
-      }
-    }}
-    style={{ 
-      display: 'block', 
+  href="https://open.kakao.com/o/gGrNacni" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  onClick={() => {
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("event", "openchat_click", {
+        event_category: "button",
+        event_label: "프라이빗 데이터 정보방 입장",
+      });
+    }
+  }}
+  style={{ 
+    display: 'block',
       backgroundColor: '#FEE500', 
       color: '#1C1917', 
       padding: '16px 0', 
