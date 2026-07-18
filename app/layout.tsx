@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,9 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    "https://realestate-git-main-vmflwhs25-9678s-projects.vercel.app"
-  ),
+  metadataBase: new URL("https://부동산10.today"),
 
   title: "부동산 상위 10% | 핵심 투자 정보",
 
@@ -29,15 +28,16 @@ export const metadata: Metadata = {
     "입지분석",
     "개발호재",
     "시장분석",
+    "부산아파트",
   ],
 
   openGraph: {
     title: "부동산 상위 10%",
+    
     description:
       "상위 투자자들이 확인하는 부동산 시장 분석과 핵심 정보",
 
-    url:
-      "https://realestate-git-main-vmflwhs25-9678s-projects.vercel.app",
+    url: "https://부동산10.today",
 
     siteName: "부동산 상위 10%",
 
@@ -68,19 +68,41 @@ export const metadata: Metadata = {
   },
 };
 
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html
       lang="ko"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+
       <body className="min-h-full flex flex-col">
+
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-K58NXZKTKD"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-K58NXZKTKD');
+          `}
+        </Script>
+
         {children}
+
       </body>
+
     </html>
   );
 }
