@@ -157,7 +157,7 @@ export default function Home() {
               if (typeof window !== "undefined" && (window as any).gtag) {
                 (window as any).gtag("event", "openchat_click", {
                   event_category: "button",
-                  event_label: "프라이빗 데이터 정보방 입장",
+                  event_label: "카카오톡 정보방 입장",
                 });
                 console.log("GA4 전송 완료");
               }
