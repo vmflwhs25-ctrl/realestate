@@ -176,7 +176,7 @@ export default function Home() {
               width: '100%'
             }}
           >
-            프라이빗 데이터 정보방 입장 💬
+            카카오톡 정보방 입장 💬
           </a>
         </div>
       </main>
